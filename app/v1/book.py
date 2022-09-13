@@ -6,9 +6,11 @@
 @Desc: 
 @Ver : 0.0.0
 '''
-from flask import Blueprint
-book=Blueprint("book",__name__)
 
-@book.route("/v1/book/get")
+from app.libs.redprint import Redprint
+
+book=Redprint("book",__name__,url_prefix="/book")
+
+@book.route("/get")
 def get_book():
     return "this is a book"

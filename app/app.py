@@ -9,10 +9,9 @@
 from flask import Flask
 
 def register_blueprint(app):
-    from app.v1.book import book
-    from app.v1.user import user
-    Flask.register_blueprint(app,book)
-    Flask.register_blueprint(app,user)
+    from app.v1 import create_blueprint
+    Flask.register_blueprint(app,create_blueprint())
+
 
 
 def create_app():

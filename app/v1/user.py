@@ -6,9 +6,9 @@
 @Desc: 
 @Ver : 0.0.0
 '''
-from flask import Blueprint
-user=Blueprint("user",__name__)
+from app.libs.redprint import Redprint
+user=Redprint("user",__name__,url_prefix="/user")
 
-@user.route("/v1/user/get")
+@user.route("/get")
 def get_user():
     return "this is a user"
